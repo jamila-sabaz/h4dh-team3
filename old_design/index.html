@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="wine sensoring tool, online wine tool, wine trend prediction">
+    <meta name="description" content="an online wine sensoring tool provide to wine maker to make prediction to ensure wine quality">
+    <title> Wine sensoring tool dashboard!</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="./main.css">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Fermentation', 'Outliers', 'Malolatic acid'],
+          ['2004',  1000,      400,      500],
+          ['2005',  1170,      460,      321],
+          ['2006',  660,       1120,     121],
+          ['2007',  1030,      540,      211]
+        ]);
+        var options = {
+          title: 'Wine Barrel Information',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Content of wine', 'percentage'],
+          ['Sugar',     38.5],
+          ['Not sugar',  61.5],
+        ]);
+
+        var options = {
+          title: 'Other Stats'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  
+  </head>
+
+  <body>
+    <div class="bar">
+      <ul class="nav">
+        <li>
+          <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
+        </li>
+        <span>|</span>
+        <li>
+          <a href="#"><i class="fa fa-hourglass-end" aria-hidden="true"></i><span>Batch</span></a>
+        </li>
+        <span>|</span>
+        <li>
+          <a href="#"><i class="fa fa-beer" aria-hidden="true"></i><span>Barrels</span></a>
+        </li>
+        <span>|</span>
+        <li>
+          <a href="#"><i class="fa fa-database" aria-hidden="true"></i><span>Data Trend</span></a>
+        </li>
+        <span>|</span>
+        <li>
+          <a href="#"><i class="fa fa-link" aria-hidden="true"></i><span>Other Links</span></a>
+        </li>
+      </ul>
+      <div class="right-top">
+        <a href="#"><i class="fa fa-cog" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <section>
+      <ul class="left_area">
+        <h2>OVERVIEW</h2>
+        <li>
+          <i class="fas fa-chart-pie"></i><span>Outlier present</span>
+        </li>
+        <li>
+          <i class="fas fa-chart-pie"></i><span>Malolactic acid conversion</span>
+        </li>
+        <li>
+          <i class="fas fa-chart-pie"></i><span>Fermentation process</span>
+        </li>
+      </ul>
+
+
+      <div class="right_area1">
+        Batch Quality
+        <div id="curve_chart" class="chart"></div>
+      </div>
+
+
+      <div class="right_area2">
+        <div id="piechart" class="piechart"></div>
+
+      </div>
+
+    </section>
+  </body>
+</html>

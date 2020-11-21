@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Wine Sensing - Sign up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="javascripts/account_actions.js"></script>
+  </head>
+
+  <body>
+    <h2 class = "center">Wine Sensing System</h4>
+    <div class="container">
+      <h4 class = "center">Sign Up</h6>
+
+      <div class="input-field" >
+        <input id="email_s" type="email" class="validate">
+        <label for="email_s" data-error="Email address not valid" data-success="right">Email</label>
+      </div>
+
+      <div class="input-field" >
+        <input id="password_s" type="password" class="validate">
+        <label for="password_s">Password</label>
+      </div>
+
+      <div class="center">
+        <button class="btn purple darken-2 modal-close" type="submit" onclick="signup_u()">Start as user</button>
+        <button class="btn purple darken-2 modal-close" type="submit" onclick="signup_m()">Start as manager</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <h4 class = "center">Log in</h6>
+      <div class="input-field">
+        <input id="email_l" type="email" class="validate">
+        <label for="email_l">Email</label>
+      </div>
+
+      <div class="input-field" >
+        <input id="password_l" type="password" class="validate">
+        <label for="password_l">Password</label>
+      </div>
+
+      <div class="center">
+        <button class="btn purple lighten-2 modal-close" type="submit" onclick="login()">Log in</button>
+        <p></p>
+      </div>
+    </div>
+
+  </body>
+</html>

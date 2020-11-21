@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Fermentation, Outlier and Malotatic acid tracker</title>
+<link> rel="stylesheet" href="style.css">
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Fermentation', 'Outliers', 'Malolatic acid'],
+          ['2004',  1000,      400,      500],
+          ['2005',  1170,      460,      321],
+          ['2006',  660,       1120,     121],
+          ['2007',  1030,      540,      211]
+        ]);
+
+        var options = {
+          title: 'Wine Barrel Information',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    
+</head>
+<body>
+
+  <div id="curve_chart" class="chart"></div>
+
+
+</body>
+</html>
